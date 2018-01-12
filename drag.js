@@ -14,7 +14,6 @@ $.fn.drag = function(opt) {
     
     $(window).on('mouseup', function(event) {
         $ctrl.drag = false;
-
         
     }).on('mousemove', function(event) {
         if ($ctrl.drag) {
@@ -30,5 +29,9 @@ $.fn.drag = function(opt) {
         $ctrl.startY = event.pageY;
         $ctrl.currentX = ($ctrl.poX === undefined) ? 0 : $ctrl.poX;
         $ctrl.currentY = ($ctrl.poY === undefined) ? 0 : $ctrl.poY;
+        $ctrl.windowW = $(window).width();
+        $ctrl.windowH = $(window).height();
+        $ctrl.W = $ctrl.el.outerWidth();
+        $ctrl.H = $ctrl.el.outerHeight();
     });
 };
