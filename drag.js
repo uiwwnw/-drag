@@ -14,6 +14,21 @@ $.fn.drag = function(opt) {
     
     $(window).on('mouseup', function(event) {
         $ctrl.drag = false;
+        var conditionX = ($ctrl.windowW - $ctrl.W) / 2;
+        var conditionY = ($ctrl.windowH - $ctrl.H) / 2;
+        
+        if(conditionX < $ctrl.poX) {
+            $ctrl.poX = conditionX;
+        } else if (-conditionX > $ctrl.poX) {
+            $ctrl.poX = -conditionX;
+        }
+        
+        if (conditionY < $ctrl.poY) {
+            $ctrl.poY = conditionY;
+        } else if (-conditionY > $ctrl.poY) {
+            $ctrl.poY = -conditionY;
+        }
+        $ctrl.el.css('transform', 'translate('+$ctrl.poX+'px,'+$ctrl.poY+'px)');
         
     }).on('mousemove', function(event) {
         if ($ctrl.drag) {

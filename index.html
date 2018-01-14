@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
     <script
   src="https://code.jquery.com/jquery-3.2.1.min.js"
   integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
@@ -12,12 +13,17 @@
     <title>Document</title>
 </head>
 <body>
-    <div class="a" style="width: 300px; height: 300px; background: red;">
-        <h1 data-drag style="cursor: move; user-select:none; background: blue;">드레그가능한 영역</h1>
-        <p>dsakljdlajsdlkasjdlkasjdlkajldjlks</p>
+    <div class="dialogOut">
+        <div class="dialog">
+            <div class="dialogIn">
+                <div class="top" data-drag>타이틀영역(클릭가능한)</div>
+                <div class="middle">내용영역</div>
+                <div class="bottom">버튼영역</div>
+            </div>
+        </div>
     </div>
     <script>
-        $('.a').drag('[data-drag]');
+        $('.dialogIn').drag('[data-drag]');
     </script>
 </body>
 </html>
